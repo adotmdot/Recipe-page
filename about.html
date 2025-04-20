@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About - Charlene Recipes</title>
+    <link rel="stylesheet" href="Charlene recipes style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">Charlene Delicious Recipes</h1>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="recipes.html">Recipes</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="hero">
+        <h2>About Charlene's Kitchen</h2>
+        <p>Charlene believes in cooking meals that are not only delicious but healthy and keto-friendly. Explore her journey and inspiration behind these vibrant recipes.</p>
+    </section>
+    <footer>
+        <p>&copy; 2025 Charlene Delicious Keto Recipes</p>
+    </footer>
+    <script>
+        const menuIcon = document.querySelector('.menu-icon');
+        const navList = document.querySelector('.nav-list');
+      
+        menuIcon.addEventListener('click', () => {
+          navList.classList.toggle('show-nav');
+        });
+      </script>
+      
+</body>
+</html>
