@@ -1,139 +1,736 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Recipes - Charlene Recipes</title>
-    <link rel="stylesheet" href="Charlene recipes style.css">
-</head>
-<body>
-    <header>
-        <div class="container">
-            <h1 class="logo">Charlene Delicious Recipes</h1>
-            <nav>
-                <ul class="nav-list">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="recipes.html">Recipes</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <section class="hero">
-        <h2>Recipe Collection</h2>
-        <p>Recipes coming soon!!</p>
-    </section>
-
-    <div class="container">
-        <div class="gallery">
-            <img src="./IMG-20241123-WA0001.jpg" alt="">
-            <div class="desc">Sardine Wraps</div>
-            <a href="#">View Recipe</a>
-           </div>
-           <div class="gallery">
-            <img src="./IMG-20241123-WA0005.jpg" alt="">
-            <div class="desc">Bell Pepper Wraps</div>
-            <a href="#">View Recipe</a>
-           </div>
-           <div class="gallery">
-            <img src="./IMG-20241123-WA0006.jpg" alt="">
-            <div class="desc">Salmon and Mushroom</div>
-            <a href="#">View Recipe</a>
-           </div>
-           <div class="gallery">
-            <img src="./IMG-20241123-WA0003.jpg" alt="">
-            <div class="desc">Turkey Pattie, Bacon and Eggs </div>
-            <a href="#">View Recipe</a>
-           </div>
-           <div class="gallery">
-            <img src="./IMG-20241123-WA0007.jpg" alt="">
-            <div class="desc">Greek Salad w/grilled chicken</div>
-            <a href="#">View Recipe</a>
-           </div>
-           <div class="gallery">
-            <img src="./IMG-20241123-WA0009.jpg" alt="">
-            <div class="desc">Omelette w/ bacon and grilled tomato</div>
-            <a href="#">View Recipe</a>
-           </div>
-           <div class="gallery">
-            <img src="./IMG_1427.jpg" alt="">
-            <div class="desc">Air Fried Lemon Pepper Wings</div>
-            <a href="#">View Recipe</a>
-           </div>
-           <div class="gallery">
-            <img src="./IMG_1532.jpg" alt="">
-            <div class="desc">Street Tacos</div>
-            <a href="#">View Recipe</a>
-           </div>
-           <div class="gallery">
-            <img src="./IMG_2162.jpg" alt="">
-            <div class="desc">Low Carb Pizza</div>
-            <a href="#">View Recipe</a>
-           </div>
-           <div class="gallery">
-            <img src="./IMG_2167.jpg" alt="">
-            <div class="desc">Eggs and Spinach with Turkey Burger</div>
-            <a href="#">View Recipe</a>
-           </div>
-           <div class="gallery">
-            <img src="./IMG_2522.jpg" alt="">
-            <div class="desc">Baked Lemon Pepper Whole Chicken</div>
-            <a href="#">View Recipe</a>
-           </div>
-           <div class="gallery">
-            <img src="./IMG_2598.jpg" alt="">
-            <div class="desc">Salmon with Cauliflower and Sweet Potato</div>
-            <a href="#">View Recipe</a>
-           </div>
-           <div class="gallery">
-            <img src="./IMG_2602.jpg" alt="">
-            <div class="desc">Juicy Baked Leg Quarters</div>
-            <a href="#">View Recipe</a>
-           </div>
-           <div class="gallery">
-            <img src="./IMG_2718.jpg" alt="">
-            <div class="desc">Garlic Butter Shrimp with Cauliflower Rice</div>
-            <a href="#">View Recipe</a>
-           </div>
-           <div class="gallery">
-            <img src="./IMG_2828.jpg" alt="">
-            <div class="desc">Cauliflower Rice with Scrambled eggs and Sausages</div>
-            <a href="#">View Recipe</a>
-           </div>
-           <div class="gallery">
-            <img src="./IMG_3046.jpg" alt="">
-            <div class="desc">Jerk Chicken</div>
-            <a href="#">View Recipe</a>
-           </div>
-           <div class="gallery">
-            <img src="./IMG_3201.jpg" alt="">
-            <div class="desc">Cauliflower Mash, Spinach, Mushrooms and Beef Stew</div>
-            <a href="#">View Recipe</a>
-           </div>
-           <div class="gallery">
-            <img src="./IMG_3780.jpg" alt="">
-            <div class="desc">Red Snapper with Cabbage</div>
-            <a href="#">View Recipe</a>
-           </div>
-           <div class="gallery">
-            <img src="./IMG_3863.jpg" alt="">
-            <div class="desc">Vegetable Soup</div>
-            <a href="#">View Recipe</a>
-           </div>
-        
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   Recipes - Charlene Recipes
+  </title>
+  <link href="Charlene recipes style.css" rel="stylesheet"/>
+  <link href="Charlene_recipes_style_final.css" rel="stylesheet"/>
+ </head>
+ <body class="recipes-page">
+  <header>
+   <div class="container">
+    <h1 class="logo">
+     Charlene Delicious Recipes
+    </h1>
+    <nav>
+     <ul class="nav-list">
+      <li>
+       <a href="index.html">
+        Home
+       </a>
+      </li>
+      <li>
+       <a href="about.html">
+        About
+       </a>
+      </li>
+      <li>
+       <a href="recipes.html">
+        Recipes
+       </a>
+      </li>
+      <li>
+       <a href="contact.html">
+        Contact
+       </a>
+      </li>
+     </ul>
+    </nav>
+   </div>
+  </header>
+  <section class="hero">
+   <h2>
+    Recipe Collection
+   </h2>
+   <p>
+    Recipes coming soon!!
+   </p>
+  </section>
+  <div class="container">
+   <div class="gallery" id="baked-lemon-pepper-whole-chicken">
+    <img alt="Baked Lemon Pepper Whole Chicken" src="./IMG_2522.jpg"/>
+    <div class="desc">
+     Baked Lemon Pepper Whole Chicken
     </div>
-
-    <footer>
-        <p>&copy; 2025 Charlene Delicious Keto Recipes</p>
-    </footer>
-    <script>
-        const menuIcon = document.querySelector('.menu-icon');
+    <h3 style="color: purple; text-align: center;">
+     Ingredients
+    </h3>
+    <ul style="padding: 0 20px; color: #4B0082;">
+     <li>
+      1 Whole Chicken
+     </li>
+     <li>
+      1 1/2 Tablespoons Lemon Pepper Seasoning
+     </li>
+     <li>
+      1 teaspoon Adobo seasoning
+     </li>
+     <li>
+      1 tablespoon Citrus Blend Seasoning
+     </li>
+     <li>
+      1/2 Tablespoon Garlic powder
+     </li>
+     <li>
+      1/2 Tablespoon Onion powder
+     </li>
+     <li>
+      1/2 Tablespoon Parsley
+     </li>
+     <li>
+      1/2 teaspoon Thyme
+     </li>
+     <li>
+      1 teaspoon Salt
+     </li>
+     <li>
+      1 teaspoon Black Pepper
+     </li>
+     <li>
+      1 tablespoon Olive Oil
+     </li>
+     <li>
+      1 tablespoon Butter
+     </li>
+    </ul>
+    <p style="padding: 0 20px; color: #4B0082;">
+     <strong>
+      Directions:
+     </strong>
+     <br/>
+     <br/>
+     Clean and spatchcock the chicken. Pour the olive oil all over the chicken. Mix all seasoning spices in a bowl.
+       Apply seasoning mixture all over the chicken (both sides). Pour melted butter over the chicken.
+       Add a few lemon slices on top. Bake at 340°F for 1 hour, basting the chicken throughout.
+    </p>
+   </div>
+   <div class="gallery" id="salmon-and-mushroom">
+    <img alt="Salmon w/ Spinach and Mushroom" src="./IMG-20241123-WA0006.jpg"/>
+    <div class="desc">
+     Salmon w/ Spinach and Mushroom
+    </div>
+    <h3 style="color: purple; text-align: center;">
+     Ingredients
+    </h3>
+    <ul style="padding: 0 20px; color: #4B0082;">
+     <li>
+      1 Salmon Fillet
+     </li>
+     <li>
+      1 cup Fresh Spinach
+     </li>
+     <li>
+      1/2 cup Sliced Mushrooms
+     </li>
+     <li>
+      1 clove Garlic (minced)
+     </li>
+     <li>
+      1 tablespoon Olive Oil
+     </li>
+     <li>
+      Salt &amp; Pepper to taste
+     </li>
+    </ul>
+    <p style="padding: 0 20px; color: #4B0082;">
+     <strong>
+      Directions:
+     </strong>
+     <br/>
+     <br/>
+     Heat olive oil in a pan. Add garlic and mushrooms, cook until soft. 
+       Add spinach and sauté until wilted. In a separate pan, cook salmon until golden on both sides. 
+       Serve salmon over the sautéed vegetables.
+    </p>
+   </div>
+   <div class="gallery" id="stuffed-bell-peppers">
+    <img alt="Stuffed Bell Peppers" src="./IMG-20241123-WA0005.jpg"/>
+    <div class="desc">
+     Stuffed Bell Peppers
+    </div>
+    <h3 style="color: purple; text-align: center;">
+     Ingredients
+    </h3>
+    <ul style="padding: 0 20px; color: #4B0082;">
+     <li>
+      2 Bell Peppers (cut in half, seeds removed)
+     </li>
+     <li>
+      1/2 lb Ground Turkey
+     </li>
+     <li>
+      1/4 Onion (chopped)
+     </li>
+     <li>
+      1/4 cup Shredded Cheese
+     </li>
+     <li>
+      1/2 cup Cauliflower Rice
+     </li>
+     <li>
+      Salt, Pepper, Garlic Powder to taste
+     </li>
+    </ul>
+    <p style="padding: 0 20px; color: #4B0082;">
+     <strong>
+      Directions:
+     </strong>
+     <br/>
+     <br/>
+     Preheat oven to 375°F. Cook turkey with onion and seasoning. 
+       Mix in cauliflower rice. Stuff the bell peppers and top with cheese. 
+       Bake for 20-25 minutes until peppers are soft and cheese is melted.
+    </p>
+   </div>
+   <div class="gallery" id="air-fried-lemon-pepper-wings">
+    <img alt="Air Fried Lemon Pepper Wings" src="./IMG_1427.jpg"/>
+    <div class="desc">
+     Air Fried Lemon Pepper Wings
+    </div>
+    <h3 style="color: purple; text-align: center;">
+     Ingredients
+    </h3>
+    <ul style="padding: 0 20px; color: #4B0082;">
+     <li>
+      8 Chicken Wings
+     </li>
+     <li>
+      1 tablespoon Lemon Pepper Seasoning
+     </li>
+     <li>
+      1 teaspoon Garlic Powder
+     </li>
+     <li>
+      1 tablespoon Olive Oil
+     </li>
+    </ul>
+    <p style="padding: 0 20px; color: #4B0082;">
+     <strong>
+      Directions:
+     </strong>
+     <br/>
+     <br/>
+     Preheat air fryer to 400°F. Toss wings in olive oil and seasoning. 
+       Air fry for 25 minutes or until crispy, flipping halfway. Serve hot.
+    </p>
+   </div>
+   <div class="gallery" id="turkey-pattie-bacon-and-eggs">
+    <img alt="Turkey Pattie, Bacon and Eggs" src="./IMG-20241123-WA0003.jpg"/>
+    <div class="desc">
+     Turkey Pattie, Bacon and Eggs
+    </div>
+    <h3 style="color: purple; text-align: center;">
+     Ingredients
+    </h3>
+    <ul style="padding: 0 20px; color: #4B0082;">
+     <li>
+      1 Turkey Pattie
+     </li>
+     <li>
+      2 strips Bacon
+     </li>
+     <li>
+      2 Eggs
+     </li>
+     <li>
+      Salt &amp; Pepper to taste
+     </li>
+     <li>
+      1 tsp Olive Oil
+     </li>
+    </ul>
+    <p style="padding: 0 20px; color: #4B0082;">
+     <strong>
+      Directions:
+     </strong>
+     <br/>
+     <br/>
+     Cook turkey pattie in a pan until browned on both sides. In a separate pan, cook bacon until crispy.
+       Fry eggs to your liking. Serve all together for a protein-packed breakfast.
+    </p>
+   </div>
+   <div class="gallery" id="greek-salad-wgrilled-chicken">
+    <img alt="Greek Salad with Grilled Chicken" src="./IMG-20241123-WA0007.jpg"/>
+    <div class="desc">
+     Greek Salad with Grilled Chicken
+    </div>
+    <h3 style="color: purple; text-align: center;">
+     Ingredients
+    </h3>
+    <ul style="padding: 0 20px; color: #4B0082;">
+     <li>
+      1 Grilled Chicken Breast
+     </li>
+     <li>
+      1/2 Cucumber (sliced)
+     </li>
+     <li>
+      1/2 Tomato (diced)
+     </li>
+     <li>
+      1/4 Red Onion (sliced)
+     </li>
+     <li>
+      Feta Cheese
+     </li>
+     <li>
+      Olives
+     </li>
+     <li>
+      Olive Oil &amp; Lemon Juice for dressing
+     </li>
+    </ul>
+    <p style="padding: 0 20px; color: #4B0082;">
+     <strong>
+      Directions:
+     </strong>
+     <br/>
+     <br/>
+     Slice grilled chicken. In a bowl, combine vegetables, olives, and feta. 
+       Top with chicken and drizzle with olive oil and lemon juice.
+    </p>
+   </div>
+   <div class="gallery" id="omelette-w-bacon-and-grilled-tomato">
+    <img alt="Omelette with Bacon and Grilled Tomato" src="./IMG-20241123-WA0009.jpg"/>
+    <div class="desc">
+     Omelette with Bacon and Grilled Tomato
+    </div>
+    <h3 style="color: purple; text-align: center;">
+     Ingredients
+    </h3>
+    <ul style="padding: 0 20px; color: #4B0082;">
+     <li>
+      2 Eggs
+     </li>
+     <li>
+      2 strips Bacon
+     </li>
+     <li>
+      1 Tomato (halved)
+     </li>
+     <li>
+      Salt, Pepper to taste
+     </li>
+     <li>
+      1 tbsp Butter
+     </li>
+    </ul>
+    <p style="padding: 0 20px; color: #4B0082;">
+     <strong>
+      Directions:
+     </strong>
+     <br/>
+     <br/>
+     Cook bacon until crispy. Grill tomato in same pan until softened. 
+       Whisk eggs, season, and cook omelette. Serve with bacon and grilled tomato on the side.
+    </p>
+   </div>
+   <div class="gallery" id="street-tacos">
+    <img alt="Street Tacos" src="./IMG_1532.jpg"/>
+    <div class="desc">
+     Street Tacos
+    </div>
+    <h3 style="color: purple; text-align: center;">
+     Ingredients
+    </h3>
+    <ul style="padding: 0 20px; color: #4B0082;">
+     <li>
+      3 Corn Tortillas
+     </li>
+     <li>
+      1/2 lb Ground Beef or Chicken
+     </li>
+     <li>
+      1/4 Onion (diced)
+     </li>
+     <li>
+      Fresh Cilantro
+     </li>
+     <li>
+      Salsa or Hot Sauce
+     </li>
+     <li>
+      Lime Wedges
+     </li>
+    </ul>
+    <p style="padding: 0 20px; color: #4B0082;">
+     <strong>
+      Directions:
+     </strong>
+     <br/>
+     <br/>
+     Cook meat with onions and seasoning. Warm tortillas. Fill with meat, top with cilantro, salsa, and squeeze of lime.
+    </p>
+   </div>
+   <div class="gallery" id="low-carb-pizza">
+    <img alt="Low Carb Pizza" src="./IMG_2162.jpg"/>
+    <div class="desc">
+     Low Carb Pizza
+    </div>
+    <h3 style="color: purple; text-align: center;">
+     Ingredients
+    </h3>
+    <ul style="padding: 0 20px; color: #4B0082;">
+     <li>
+      1 Low-Carb Tortilla or Cauliflower Crust
+     </li>
+     <li>
+      1/4 cup Marinara Sauce (sugar-free)
+     </li>
+     <li>
+      1/2 cup Shredded Mozzarella
+     </li>
+     <li>
+      Pepperoni or favorite toppings
+     </li>
+     <li>
+      Italian Seasoning
+     </li>
+    </ul>
+    <p style="padding: 0 20px; color: #4B0082;">
+     <strong>
+      Directions:
+     </strong>
+     <br/>
+     <br/>
+     Preheat oven to 375°F. Spread marinara sauce on crust, sprinkle cheese, add toppings.
+       Bake for 10-12 minutes until cheese is melted and bubbly.
+    </p>
+   </div>
+   <div class="gallery" id="eggs-and-spinach-with-turkey-burger">
+    <img alt="Eggs and Spinach with Turkey Burger" src="./IMG_2167.jpg"/>
+    <div class="desc">
+     Eggs and Spinach with Turkey Burger
+    </div>
+    <h3 style="color: purple; text-align: center;">
+     Ingredients
+    </h3>
+    <ul style="padding: 0 20px; color: #4B0082;">
+     <li>
+      1 Turkey Burger Patty
+     </li>
+     <li>
+      1 cup Fresh Spinach
+     </li>
+     <li>
+      2 Eggs
+     </li>
+     <li>
+      Salt, Pepper, Garlic Powder to taste
+     </li>
+     <li>
+      1 tbsp Olive Oil
+     </li>
+    </ul>
+    <p style="padding: 0 20px; color: #4B0082;">
+     <strong>
+      Directions:
+     </strong>
+     <br/>
+     <br/>
+     Cook turkey patty. In same pan, sauté spinach in olive oil. Fry or scramble eggs. 
+       Plate together for a balanced low-carb meal.
+    </p>
+   </div>
+   <div class="gallery" id="salmon-with-cauliflower-and-sweet-potato">
+    <img alt="Salmon with Cauliflower and Sweet Potato" src="./IMG_2598.jpg"/>
+    <div class="desc">
+     Salmon with Cauliflower and Sweet Potato
+    </div>
+    <h3 style="color: purple; text-align: center;">
+     Ingredients
+    </h3>
+    <ul style="padding: 0 20px; color: #4B0082;">
+     <li>
+      1 Salmon Fillet
+     </li>
+     <li>
+      1 cup Roasted Cauliflower
+     </li>
+     <li>
+      1/2 cup Mashed Sweet Potato
+     </li>
+     <li>
+      Lemon, Salt, Pepper
+     </li>
+     <li>
+      1 tbsp Olive Oil
+     </li>
+    </ul>
+    <p style="padding: 0 20px; color: #4B0082;">
+     <strong>
+      Directions:
+     </strong>
+     <br/>
+     <br/>
+     Season and cook salmon in pan or oven. Serve alongside roasted cauliflower and mashed sweet potato.
+       Drizzle with olive oil and lemon juice.
+    </p>
+   </div>
+   <div class="gallery" id="juicy-baked-leg-quarters">
+    <img alt="Juicy Baked Leg Quarters" src="./IMG_2602.jpg"/>
+    <div class="desc">
+     Juicy Baked Leg Quarters
+    </div>
+    <h3 style="color: purple; text-align: center;">
+     Ingredients
+    </h3>
+    <ul style="padding: 0 20px; color: #4B0082;">
+     <li>
+      2 Chicken Leg Quarters
+     </li>
+     <li>
+      1 tbsp Olive Oil
+     </li>
+     <li>
+      1 tsp Paprika
+     </li>
+     <li>
+      1 tsp Garlic Powder
+     </li>
+     <li>
+      Salt &amp; Pepper
+     </li>
+    </ul>
+    <p style="padding: 0 20px; color: #4B0082;">
+     <strong>
+      Directions:
+     </strong>
+     <br/>
+     <br/>
+     Preheat oven to 375°F. Rub chicken with oil and seasonings. Bake uncovered for 45–60 minutes until golden and juices run clear.
+    </p>
+   </div>
+   <div class="gallery" id="garlic-butter-shrimp-with-cauliflower-rice">
+    <img alt="Garlic Butter Shrimp with Cauliflower Rice" src="./IMG_2718.jpg"/>
+    <div class="desc">
+     Garlic Butter Shrimp with Cauliflower Rice
+    </div>
+    <h3 style="color: purple; text-align: center;">
+     Ingredients
+    </h3>
+    <ul style="padding: 0 20px; color: #4B0082;">
+     <li>
+      1 cup Shrimp (peeled and deveined)
+     </li>
+     <li>
+      1 tbsp Butter
+     </li>
+     <li>
+      2 Garlic cloves (minced)
+     </li>
+     <li>
+      1 cup Cauliflower Rice
+     </li>
+     <li>
+      Parsley, Salt &amp; Pepper
+     </li>
+    </ul>
+    <p style="padding: 0 20px; color: #4B0082;">
+     <strong>
+      Directions:
+     </strong>
+     <br/>
+     <br/>
+     Sauté garlic in butter, add shrimp and cook until pink. Stir in cauliflower rice and cook until heated. 
+       Garnish with parsley.
+    </p>
+   </div>
+   <div class="gallery" id="cauliflower-rice-with-scrambled-eggs-and-sausages">
+    <img alt="Cauliflower Rice with Scrambled Eggs and Sausages" src="./IMG_2828.jpg"/>
+    <div class="desc">
+     Cauliflower Rice with Scrambled Eggs and Sausages
+    </div>
+    <h3 style="color: purple; text-align: center;">
+     Ingredients
+    </h3>
+    <ul style="padding: 0 20px; color: #4B0082;">
+     <li>
+      1 cup Cauliflower Rice
+     </li>
+     <li>
+      2 Eggs
+     </li>
+     <li>
+      2 Breakfast Sausages (sliced)
+     </li>
+     <li>
+      Salt, Pepper, Garlic Powder
+     </li>
+    </ul>
+    <p style="padding: 0 20px; color: #4B0082;">
+     <strong>
+      Directions:
+     </strong>
+     <br/>
+     <br/>
+     Cook sausages and set aside. Scramble eggs. Sauté cauliflower rice and combine everything. Season to taste.
+    </p>
+   </div>
+   <div class="gallery" id="jerk-chicken">
+    <img alt="Jerk Chicken" src="./IMG_3046.jpg"/>
+    <div class="desc">
+     Jerk Chicken
+    </div>
+    <h3 style="color: purple; text-align: center;">
+     Ingredients
+    </h3>
+    <ul style="padding: 0 20px; color: #4B0082;">
+     <li>
+      2 Chicken Thighs
+     </li>
+     <li>
+      2 tbsp Jerk Seasoning
+     </li>
+     <li>
+      1 tbsp Olive Oil
+     </li>
+     <li>
+      1 tsp Lime Juice
+     </li>
+    </ul>
+    <p style="padding: 0 20px; color: #4B0082;">
+     <strong>
+      Directions:
+     </strong>
+     <br/>
+     <br/>
+     Coat chicken with jerk seasoning, lime, and oil. Grill or bake until fully cooked and nicely charred.
+    </p>
+   </div>
+   <div class="gallery" id="cauliflower-mash-spinach-mushrooms-and-beef-stew">
+    <img alt="Cauliflower Mash, Spinach, Mushrooms and Beef Stew" src="./IMG_3201.jpg"/>
+    <div class="desc">
+     Cauliflower Mash, Spinach, Mushrooms and Beef Stew
+    </div>
+    <h3 style="color: purple; text-align: center;">
+     Ingredients
+    </h3>
+    <ul style="padding: 0 20px; color: #4B0082;">
+     <li>
+      1 cup Cauliflower Mash
+     </li>
+     <li>
+      1/2 cup Sautéed Spinach
+     </li>
+     <li>
+      1/2 cup Mushrooms
+     </li>
+     <li>
+      1 cup Beef Stew
+     </li>
+    </ul>
+    <p style="padding: 0 20px; color: #4B0082;">
+     <strong>
+      Directions:
+     </strong>
+     <br/>
+     <br/>
+     Prepare mash and sautéed veggies. Top with hot beef stew for a hearty keto-friendly plate.
+    </p>
+   </div>
+   <div class="gallery" id="red-snapper-with-cabbage">
+    <img alt="Red Snapper with Cabbage" src="./IMG_3780.jpg"/>
+    <div class="desc">
+     Red Snapper with Cabbage
+    </div>
+    <h3 style="color: purple; text-align: center;">
+     Ingredients
+    </h3>
+    <ul style="padding: 0 20px; color: #4B0082;">
+     <li>
+      1 Red Snapper Fillet
+     </li>
+     <li>
+      1 cup Sautéed Cabbage
+     </li>
+     <li>
+      1 tsp Paprika
+     </li>
+     <li>
+      1 tbsp Butter
+     </li>
+     <li>
+      Lemon, Salt, Pepper
+     </li>
+    </ul>
+    <p style="padding: 0 20px; color: #4B0082;">
+     <strong>
+      Directions:
+     </strong>
+     <br/>
+     <br/>
+     Season fish and pan-sear in butter. Serve over a bed of sautéed cabbage with lemon wedges.
+    </p>
+   </div>
+   <div class="gallery" id="vegetable-soup">
+    <img alt="Vegetable Soup" src="./IMG_3863.jpg"/>
+    <div class="desc">
+     Vegetable Soup
+    </div>
+    <h3 style="color: purple; text-align: center;">
+     Ingredients
+    </h3>
+    <ul style="padding: 0 20px; color: #4B0082;">
+     <li>
+      1 cup Broth (chicken or veggie)
+     </li>
+     <li>
+      1/2 cup Cabbage
+     </li>
+     <li>
+      1/4 cup Carrots
+     </li>
+     <li>
+      1/4 cup Zucchini
+     </li>
+     <li>
+      Salt, Pepper, Italian Herbs
+     </li>
+    </ul>
+    <p style="padding: 0 20px; color: #4B0082;">
+     <strong>
+      Directions:
+     </strong>
+     <br/>
+     <br/>
+     Simmer all ingredients in broth for 15–20 minutes until veggies are tender.
+    </p>
+   </div>
+  </div>
+  <footer>
+   <p>
+    © 2025 Charlene Delicious Keto Recipes
+   </p>
+  </footer>
+  <script>
+   const menuIcon = document.querySelector('.menu-icon');
         const navList = document.querySelector('.nav-list');
       
         menuIcon.addEventListener('click', () => {
           navList.classList.toggle('show-nav');
         });
-      </script>
-      
-</body>
+  </script>
+  <script>
+   document.addEventListener("DOMContentLoaded", function() {
+    const allCards = document.querySelectorAll('.gallery');
+    const params = new URLSearchParams(window.location.search);
+    const recipeId = params.get('id');
+
+    if (recipeId) {
+        allCards.forEach(card => {
+            if (!card.id || card.id !== recipeId) {
+                card.style.display = 'none';
+            } else {
+                card.style.flex = '1 1 100%';
+                card.style.display = 'block';
+                card.classList.add('single-view');
+            }
+        });
+    }
+});
+  </script>
+ </body>
 </html>
