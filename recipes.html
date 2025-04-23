@@ -2,14 +2,70 @@
 <html lang="en">
  <head>
   <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>
    Recipes - Charlene Recipes
   </title>
   <link href="Charlene recipes style.css" rel="stylesheet"/>
-  <link href="Charlene_recipes_style_final_mobile_fixed.css" rel="stylesheet">
+  <link href="Charlene_recipes_style_recipes_final_fixed.css" rel="stylesheet"/>
+  <link href="Charlene_recipes_style_mobile_final_override.css" rel="stylesheet"/>
+  <style>
+   /* Hamburger Navigation Styles */
+nav#mobile-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: purple;
+  padding: 10px 20px;
+  color: white;
+  font-family: 'Cursive', sans-serif;
+}
 
+nav#mobile-nav .logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
 
+nav#mobile-nav .hamburger {
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+}
 
+nav#mobile-nav .nav-list {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+nav#mobile-nav .nav-list a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  nav#mobile-nav .hamburger {
+    display: block;
+  }
+  nav#mobile-nav .nav-list {
+    display: none;
+    flex-direction: column;
+    background-color: purple;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 160px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  nav#mobile-nav .nav-list.active {
+    display: flex;
+  }
+}
+  </style>
  </head>
  <body class="recipes-page">
   <header>
@@ -18,6 +74,9 @@
      Charlene Delicious Recipes
     </h1>
     <nav>
+     <div class="menu-icon">
+      ☰
+     </div>
      <ul class="nav-list">
       <li>
        <a href="index.html">
@@ -734,6 +793,21 @@
         });
     }
 });
+  </script>
+  <script>
+   function toggleMenu() {
+    var nav = document.getElementById("navList");
+    nav.classList.toggle("active");
+  }
+  </script>
+  <script>
+   const menuIcon = document.querySelector('.menu-icon');
+const navList = document.querySelector('.nav-list');
+if (menuIcon && navList) {
+  menuIcon.addEventListener('click', () => {
+    navList.classList.toggle('show-nav');
+  });
+}
   </script>
  </body>
 </html>

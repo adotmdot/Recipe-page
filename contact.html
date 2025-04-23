@@ -1,39 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Contact - Charlene Recipes</title>
-    <link rel="stylesheet" href="Charlene recipes style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="Charlene recipes style.css" rel="stylesheet">
+  <link href="Charlene_recipes_style_recipes_final_fixed.css" rel="stylesheet">
+  <link href="Charlene_recipes_style_mobile_final_override.css" rel="stylesheet">
+  <title>Contact - Charlene Recipes</title>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1 class="logo">Charlene Delicious Recipes</h1>
-            <nav>
-                <ul class="nav-list">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="recipes.html">Recipes</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <section class="hero">
-        <h2>Contact Charlene</h2>
-        <p>If you’d like to share your recipe or have questions, please send a message to charlene@recipes.com or fill out our contact form (coming soon!).</p>
-    </section>
-    <footer>
-        <p>&copy; 2025 Charlene Delicious Keto Recipes</p>
-    </footer>
-    <script>
-        const menuIcon = document.querySelector('.menu-icon');
-        const navList = document.querySelector('.nav-list');
-      
-        menuIcon.addEventListener('click', () => {
-          navList.classList.toggle('show-nav');
-        });
-      </script>
-      
+  <header>
+    <div class="container">
+      <h1 class="logo">Charlene Delicious Recipes</h1>
+      <nav>
+        <div class="menu-icon">&#9776;</div>
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="recipes.html">Recipes</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+<section class="hero">
+  <div class="hero-content">
+    <h2>Contact Charlene</h2>
+    <p>We’d love to hear from you! Reach out with your thoughts or questions.</p>
+  </div>
+</section>
+
+  <main style="padding: 20px; text-align: center;">
+    <h2>Contact Me</h2>
+    <p>Got questions or feedback? Reach out via email at <a href="mailto:charlene@recipes.com">charlene@recipes.com</a>.</p>
+  </main>
+  <script>
+    const menuIcon = document.querySelector('.menu-icon');
+    const navList = document.querySelector('.nav-list');
+    if (menuIcon && navList) {
+      menuIcon.addEventListener('click', () => {
+        navList.classList.toggle('show-nav');
+      });
+    }
+  </script>
 </body>
 </html>
