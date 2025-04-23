@@ -1,0 +1,58 @@
+
+/* FINAL FIX: Override ALL base gallery styles on mobile for recipes-page */
+@media (max-width: 800px) {
+  body.recipes-page .container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 20px !important;
+    padding: 10px !important;
+  }
+
+  body.recipes-page .gallery {
+    display: block !important;
+    width: 95% !important;
+    max-width: 95% !important;
+    margin: 15px auto !important;
+    flex: 1 1 95% !important;
+    border-radius: 15px !important;
+    background: #fff0f5 !important;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1) !important;
+  }
+
+  body.recipes-page .gallery img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+    border-radius: 10px 10px 0 0 !important;
+  }
+
+  body.recipes-page .desc {
+    padding: 10px !important;
+    font-size: 1.2rem !important;
+    text-align: center !important;
+    color: purple !important;
+  }
+
+  body.recipes-page .gallery ul,
+  body.recipes-page .gallery p {
+    padding: 10px !important;
+    font-size: 1rem !important;
+    color: #4B0082 !important;
+  }
+
+  body.recipes-page .gallery a {
+    display: block !important;
+    text-align: center !important;
+    padding: 10px !important;
+    background-color: purple !important;
+    color: white !important;
+    text-decoration: none !important;
+    font-weight: bold !important;
+    border-radius: 0 0 10px 10px !important;
+  }
+
+  body.recipes-page .gallery a:hover {
+    background-color: #6a0dad !important;
+  }
+}
