@@ -31,10 +31,17 @@
   </div>
 </section>
 
-  <main style="padding: 20px; text-align: center;">
-    <h2>Contact Me</h2>
-    <p>Got questions or feedback? Reach out via email at <a href="mailto:charlene@recipes.com">charlene@recipes.com</a>.</p>
-  </main>
+<main style="padding: 20px; max-width: 600px; margin: auto;">
+  <h2 style="color: purple; text-align: center;">Get In Touch</h2>
+  <form action="mailto:charlene@recipes.com" method="POST" enctype="text/plain" style="display: flex; flex-direction: column; gap: 15px; margin-top: 20px;">
+    <input type="text" name="Name" placeholder="Your Name" required style="padding: 10px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem;">
+    <input type="email" name="Email" placeholder="Your Email" required style="padding: 10px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem;">
+    <textarea name="Message" placeholder="Your Message" rows="6" required style="padding: 10px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem;"></textarea>
+    <button type="submit" style="background-color: purple; color: white; padding: 12px; border: none; border-radius: 8px; font-size: 1rem; cursor: pointer;">Send Message</button>
+  </form>
+  <p style="text-align: center; margin-top: 20px; color: #4B0082;">Or email directly at <a href="mailto:charlene@recipes.com" style="color: purple; font-weight: bold;">charlene@recipes.com</a></p>
+</main>
+
   <script>
     const menuIcon = document.querySelector('.menu-icon');
     const navList = document.querySelector('.nav-list');
