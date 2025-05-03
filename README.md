@@ -56,24 +56,24 @@ The project emphasizes a stylish and mobile-responsive design that delivers a se
 ├── about.html
 ├── recipes.html
 ├── contact.html
-├── Charlene recipes style.css
-├── Charlene_recipes_style_recipes_final_fixed.css
-├── Charlene_recipes_style_mobile_final_override.css
+├── Charlene-recipes-style.css
+├── Charlene_recipes_style_recipes.css
+├── Charlene_recipes_style_mobile.css
 ├── /IMG (all recipe images)
 </pre>
 
 <h2>🚀 Getting Started</h2>
 
 <ol>
-  <li>Clone or download the repository</li>
-  <li>Open <code>index.html</code> in your browser</li>
+  <li>Clone or download the repository.</li>
+  <li>Open <code>index.html</code> in your browser.</li>
 </ol>
 
 <h2>🙌 Acknowledgments</h2>
 
 <ul>
-  <li>Inspired by the passion for healthy, joyful home cooking</li>
-  <li>Designed to be accessible and easy to navigate for all users</li>
+  <li>Inspired by a passion for healthy, joyful home cooking.</li>
+  <li>Designed to be accessible and easy to navigate for all users.</li>
 </ul>
 
 <p>Created by Anthony Massaquoi — reach out at <a href="mailto:anthonymassaquoi857@gmail.com">anthonymassaquoi857@gmail.com</a></p>
