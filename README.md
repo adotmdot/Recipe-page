@@ -51,7 +51,7 @@ The project emphasizes a stylish and mobile-responsive design that delivers a se
 <h2>📂 Folder Structure</h2>
 
 <pre>
-/Charlene-Recipes/
+/Recipe-page/
 ├── index.html
 ├── about.html
 ├── recipes.html
@@ -59,7 +59,7 @@ The project emphasizes a stylish and mobile-responsive design that delivers a se
 ├── Charlene-recipes-style.css
 ├── Charlene_recipes_style_recipes.css
 ├── Charlene_recipes_style_mobile.css
-├── /IMG (all recipe images)
+├── /main (all recipe images)
 </pre>
 
 <h2>🚀 Getting Started</h2>
