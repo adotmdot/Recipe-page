@@ -225,6 +225,22 @@
           </script>
           
         
+<!-- Back & Top Buttons -->
+<div class="floating-buttons">
+  <button onclick="history.back()">← Go Back</button>
+  <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">↑ Top</button>
+</div>
+
+<script>
+  window.addEventListener('scroll', function () {
+    const btns = document.querySelector('.floating-buttons');
+    if (window.scrollY > 300) {
+      btns.classList.add('show');
+    } else {
+      btns.classList.remove('show');
+    }
+  });
+</script>
 
 </body>
 </html>
