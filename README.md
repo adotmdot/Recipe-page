@@ -52,14 +52,15 @@ The project emphasizes a stylish and mobile-responsive design that delivers a se
 
 <pre>
 /Recipe-page/
-├── index.html
-├── about.html
-├── recipes.html
-├── contact.html
-├── Charlene-recipes-style.css
-├── Charlene_recipes_style_recipes.css
-├── Charlene_recipes_style_mobile.css
-├── /main (all recipe images)
+  ├── /main (all recipe images)
+        ├── index.html
+        ├── about.html
+        ├── recipes.html
+        ├── contact.html
+        ├── Charlene-recipes-style.css
+        ├── Charlene_recipes_style_recipes.css
+        ├── Charlene_recipes_style_mobile.css
+
 </pre>
 
 <h2>🚀 Getting Started</h2>
