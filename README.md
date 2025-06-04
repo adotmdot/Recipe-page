@@ -67,7 +67,7 @@ The project emphasizes a stylish and mobile-responsive design that delivers a se
 
 <ol>
   <li>Clone or download the repository.</li>
-  <li>Open <code>index.html</code> in your browser.</li>
+  <li>Open <code>main/index.html</code> in your browser.</li>
 </ol>
 
 <h2>🙌 Acknowledgments</h2>
