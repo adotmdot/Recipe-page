@@ -168,7 +168,7 @@ nav#mobile-nav .nav-list a {
        Add a few lemon slices on top. Bake at 340°F for 1 hour, basting the chicken throughout.
     </p>
    </div>
-   <div class="gallery" id="salmon-and-mushroom">
+   <div class="gallery" id="salmon-w-spinach-and-mushroom">
     <img alt="Salmon w/ Spinach and Mushroom" src="./IMG-20241123-WA0006.jpg"/>
     <div class="desc">
      Salmon w/ Spinach and Mushroom
@@ -937,7 +937,7 @@ nav#mobile-nav .nav-list a {
     </p>
    </div>
   
-   <div class="gallery" id="meatballs-zucchini-noodles-keto-bread">
+   <div class="gallery" id="meatballs-with-zucchini-noodles-and-keto-bread">
     <img alt="Sardine Wraps" src="./IMG_1431.jpg"/>
     <div class="desc">
       Meatballs with Zucchini Noodles and Keto Bread
@@ -985,7 +985,7 @@ nav#mobile-nav .nav-list a {
      Warm keto bread separately. Serve meatballs over zucchini noodles with marinara, and keto bread on the side.
     </p>
    </div>
-   <div class="gallery" id="curry-chicken-cauliflower-mash-corn-carrots">
+   <div class="gallery" id="curry-chicken-with-cauliflower-mash-corn-and-carrots">
     <img alt="Curry Chicken with Cauliflower Mash, Corn and Carrots" src="./IMG_6615.jpg"/>
     <div class="desc">
       Curry Chicken with Cauliflower Mash, Corn and Carrots
@@ -1031,7 +1031,7 @@ nav#mobile-nav .nav-list a {
      Serve curry chicken with cauliflower mash, corn, and carrots.
     </p>
    </div>
-   <div class="gallery" id="grilled-teriyaki-chicken-cauliflower-rice-bell-peppers">
+   <div class="gallery" id="grilled-teriyaki-chicken-with-cauliflower-rice-and-bell-peppers">
     <img alt="Grilled Teriyaki Chicken with Cauliflower Rice and Bell Peppers" src="./IMG_7976.jpg"/>
     <div class="desc">
       Grilled Teriyaki Chicken with Cauliflower Rice and Bell Peppers
@@ -1171,32 +1171,29 @@ nav#mobile-nav .nav-list a {
    </p>
   </footer>
   <script>
-   const menuIcon = document.querySelector('.menu-icon');
-        const navList = document.querySelector('.nav-list');
-      
-        menuIcon.addEventListener('click', () => {
-          navList.classList.toggle('show-nav');
-        });
-  </script>
-  <script>
-   document.addEventListener("DOMContentLoaded", function() {
-    const allCards = document.querySelectorAll('.gallery');
-    const params = new URLSearchParams(window.location.search);
-    const recipeId = params.get('id');
+  document.addEventListener("DOMContentLoaded", function () {
+  const allCards = document.querySelectorAll('.gallery');
+  const params = new URLSearchParams(window.location.search);
+  const recipeId = params.get('id');
 
-    if (recipeId) {
-        allCards.forEach(card => {
-            if (!card.id || card.id !== recipeId) {
-                card.style.display = 'none';
-            } else {
-                card.style.flex = '1 1 100%';
-                card.style.display = 'block';
-                card.classList.add('single-view');
-            }
-        });
-    }
+  if (recipeId) {
+    allCards.forEach(card => {
+      if (!card.id || card.id !== recipeId) {
+        card.style.display = 'none';
+      } else {
+        card.style.flex = '1 1 100%';
+        card.style.display = 'block';
+        card.classList.add('single-view');
+
+        setTimeout(() => {
+          card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 200);
+      }
+    });
+  }
 });
-  </script>
+</script>
+
   <script>
    function toggleMenu() {
     var nav = document.getElementById("navList");
