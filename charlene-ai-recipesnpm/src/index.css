@@ -1,391 +1,260 @@
 @import "tailwindcss";
 
-/* GLOBAL */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html,
 body {
-  overflow-x: hidden;
-  width: 100%;
   background-color: #fff5f7;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
-/* PREVENT OVERFLOW */
-
-img,
-video,
-iframe {
-  max-width: 100%;
-}
-
-.container,
-.hero,
-.navbar,
-.recipe-card,
-.auth-container,
-.chef-chat-container {
-  width: 100%;
-  overflow-x: hidden;
-}
-
-/* =========================
-   CHEF CHAT
-========================= */
 
 .chef-chat-container {
-  max-width: 900px;
-  margin: 60px auto;
-  background: white;
-  padding: 30px;
-  border-radius: 25px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    max-width: 900px;
+    margin: 60px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 .chef-title {
-  font-size: 2rem;
-  color: #7e22ce;
-  margin-bottom: 20px;
-  font-weight: bold;
+    font-size: 2rem;
+    color: #7e22ce;
+    margin-bottom: 20px;
+    font-weight: bold;
 }
 
 .chat-box {
-  height: 500px;
-  overflow-y: auto;
-  background: #f9f4ff;
-  padding: 25px;
-  border-radius: 20px;
-  margin-bottom: 20px;
+    height: 500px;
+    overflow-y: auto;
+    background: #f9f4ff;
+    padding: 25px;
+    border-radius: 20px;
+    margin-bottom: 20px;
 
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .user-message {
-  background: linear-gradient(
-    135deg,
-    #7e22ce,
-    #9333ea
-  );
+    background: linear-gradient(
+        135deg,
+        #7e22ce,
+        #9333ea
+    );
 
-  color: white;
+    color: white;
 
-  padding: 16px 20px;
+    padding: 16px 20px;
 
-  border-radius: 18px;
+    border-radius: 18px;
 
-  margin-bottom: 18px;
+    margin-bottom: 18px;
 
-  width: fit-content;
+    width: fit-content;
 
-  max-width: 70%;
+    max-width: 70%;
 
-  margin-left: auto;
+    margin-left: auto;
 
-  line-height: 1.7;
+    line-height: 1.7;
 
-  box-shadow: 0 2px 10px rgba(126,34,206,0.25);
+    box-shadow: 0 2px 10px rgba(126,34,206,0.25);
 }
 
 .ai-message {
-  background: #ede9fe;
-  color: #333;
-  padding: 18px 22px;
-  border-radius: 18px;
-  margin-bottom: 18px;
-  max-width: 85%;
-  line-height: 1.9;
-  font-size: 1rem;
+    background: #ede9fe;
+    color: #333;
+    padding: 18px 22px;
+    border-radius: 18px;
+    margin-bottom: 18px;
+    max-width: 85%;
+    line-height: 1.9;
+    font-size: 1rem;
 
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-/* =========================
-   INPUT AREA
-========================= */
-
 .chat-input-area {
-  display: flex;
-  gap: 12px;
-  align-items: center;
+    display: flex;
+    gap: 12px;
+    align-items: center;
 }
 
 .chat-input-area input {
-  flex: 1;
+    flex: 1;
 
-  padding: 18px;
+    padding: 18px;
 
-  border-radius: 16px;
+    border-radius: 16px;
 
-  border: 2px solid #ddd;
+    border: 2px solid #ddd;
 
-  font-size: 1rem;
+    font-size: 1rem;
 
-  outline: none;
+    outline: none;
 
-  transition: 0.2s;
+    transition: 0.2s;
 }
 
 .chat-input-area input:focus {
-  border-color: #7e22ce;
+    border-color: #7e22ce;
 }
 
 .chat-input-area button {
-  background: linear-gradient(
-    135deg,
-    #7e22ce,
-    #9333ea
-  );
 
-  color: white;
+    background: linear-gradient(
+        135deg,
+        #7e22ce,
+        #9333ea
+    );
 
-  border: none;
+    color: white;
 
-  padding: 18px 28px;
+    border: none;
 
-  border-radius: 16px;
+    padding: 18px 28px;
 
-  cursor: pointer;
+    border-radius: 16px;
 
-  font-weight: bold;
+    cursor: pointer;
 
-  transition: 0.2s;
+    font-weight: bold;
+
+    transition: 0.2s;
 }
 
 .chat-input-area button:hover {
-  transform: translateY(-2px);
+    transform: translateY(-2px);
 }
 
-/* =========================
-   WELCOME MESSAGE
-========================= */
-
 .welcome-message {
-  background: #faf5ff;
-  padding: 20px;
-  border-radius: 18px;
-  margin-bottom: 20px;
-  color: #444;
-  line-height: 1.8;
+    background: #faf5ff;
+    padding: 20px;
+    border-radius: 18px;
+    margin-bottom: 20px;
+    color: #444;
+    line-height: 1.8;
 }
 
 .welcome-message ul {
-  margin-top: 15px;
-  padding-left: 20px;
+    margin-top: 15px;
+    padding-left: 20px;
 }
 
 .welcome-message li {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .user-message strong,
 .ai-message strong {
-  font-size: 0.9rem;
-  opacity: 0.8;
+    font-size: 0.9rem;
+    opacity: 0.8;
 }
 
-/* =========================
-   AI MESSAGE FORMATTING
-========================= */
 
 .ai-message h1,
 .ai-message h2,
 .ai-message h3 {
-  margin-bottom: 10px;
-  color: #6b21a8;
+    margin-bottom: 10px;
+    color: #6b21a8;
 }
 
 .ai-message ul,
 .ai-message ol {
-  padding-left: 25px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+    padding-left: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .ai-message li {
-  margin-bottom: 8px;
+    margin-bottom: 8px;
 }
 
 .ai-message p {
-  margin-bottom: 12px;
+    margin-bottom: 12px;
 }
 
-/* =========================
-   TYPING ANIMATION
-========================= */
 
 .typing-indicator {
-  display: flex;
-  align-items: center;
-  gap: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
 .typing-dot {
-  width: 10px;
-  height: 10px;
-  background: #7e22ce;
-  border-radius: 50%;
-  animation: bounce 1.4s infinite ease-in-out both;
+    width: 10px;
+    height: 10px;
+    background: #7e22ce;
+    border-radius: 50%;
+    animation: bounce 1.4s infinite ease-in-out both;
 }
 
 .typing-dot:nth-child(1) {
-  animation-delay: -0.32s;
+    animation-delay: -0.32s;
 }
 
 .typing-dot:nth-child(2) {
-  animation-delay: -0.16s;
+    animation-delay: -0.16s;
 }
 
 @keyframes bounce {
-  0%,
-  80%,
-  100% {
-    transform: scale(0);
-  }
 
-  40% {
-    transform: scale(1);
-  }
+    0%,
+    80%,
+    100% {
+        transform: scale(0);
+    }
+
+    40% {
+        transform: scale(1);
+    }
 }
 
-/* =========================
-   AUTH
-========================= */
 
 .auth-container {
-  min-height: 80vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
 }
 
 .auth-card {
-  width: 100%;
-  max-width: 450px;
-  background: white;
-  padding: 35px;
-  border-radius: 25px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
+    width: 100%;
+    max-width: 450px;
+    background: white;
+    padding: 35px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
 }
 
 .auth-card h2 {
-  color: #7e22ce;
-  font-size: 2rem;
-  font-weight: bold;
-  text-align: center;
+    color: #7e22ce;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
 }
 
 .auth-card input {
-  padding: 16px;
-  border-radius: 14px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
+    padding: 16px;
+    border-radius: 14px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
 }
 
 .auth-card button {
-  background: #7e22ce;
-  color: white;
-  padding: 16px;
-  border-radius: 14px;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-}
-
-.auth-card button:hover {
-  background: #6b21a8;
+    background: #7e22ce;
+    color: white;
+    padding: 16px;
+    border-radius: 14px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
 }
 
 .auth-card p {
-  text-align: center;
-  color: #7e22ce;
-  font-weight: bold;
-}
-
-/* =========================
-   MOBILE RESPONSIVE FIXES
-========================= */
-
-@media (max-width: 768px) {
-
-  body {
-    overflow-x: hidden;
-  }
-
-  .chef-chat-container {
-    margin: 20px;
-    padding: 20px;
-  }
-
-  .chef-title {
-    font-size: 1.5rem;
     text-align: center;
-  }
-
-  .chat-box {
-    height: 400px;
-    padding: 15px;
-  }
-
-  .user-message,
-  .ai-message {
-    max-width: 100%;
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
-
-  .chat-input-area {
-    flex-direction: column;
-  }
-
-  .chat-input-area input {
-    width: 100%;
-  }
-
-  .chat-input-area button {
-    width: 100%;
-  }
-
-  .auth-container {
-    padding: 20px;
-  }
-
-  .auth-card {
-    padding: 25px;
-  }
-
-  .auth-card h2 {
-    font-size: 1.6rem;
-  }
-
-  input,
-  textarea {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  h1 {
-    font-size: 3rem !important;
-    line-height: 1.1;
-    text-align: center;
-  }
-
-  p {
-    text-align: center;
-  }
-
-  nav {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-  }
+    color: #7e22ce;
+    font-weight: bold;
 }
