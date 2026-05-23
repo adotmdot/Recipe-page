@@ -1,6 +1,9 @@
 import { useState } from "react"
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
 
+import "./index.css";
+import "./App.css";
+
 import Home from "./pages/Home"
 import About from "./pages/About"
 import Contact from "./pages/Contact"
@@ -19,14 +22,15 @@ function App() {
 
       <div className={darkMode ? "bg-gray-900 text-white min-h-screen" : "bg-pink-50 min-h-screen"}>
 
-      <nav className="bg-purple-700 text-white shadow-lg">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <nav className="navbar bg-purple-700 text-white shadow-lg">
+
+        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center w-full">
 
           <h1 className="text-3xl font-bold">
             Charlene AI Recipes
           </h1>
 
-          <div className="space-x-6 flex items-center">
+          <div className="nav-links">
 
             <Link to="/" className="hover:text-pink-200 transition">
               Home
@@ -40,9 +44,9 @@ function App() {
               Contact
             </Link>
 
-             <Link to="/admin" className="hover:text-pink-200 transition">
-                Admin
-              </Link>
+            <Link to="/admin" className="hover:text-pink-200 transition">
+              Admin
+            </Link>
 
             <Link to="/signup" className="hover:text-pink-200 transition">
               Signup
@@ -62,6 +66,7 @@ function App() {
           </div>
 
         </div>
+
       </nav>
 
       <Routes>

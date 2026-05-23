@@ -99,9 +99,9 @@ function Home() {
     <div className="min-h-screen bg-pink-50">
 
       {/* HERO SECTION */}
-      <section className="text-center py-24 px-6 bg-gradient-to-r from-purple-700 to-pink-500 text-white">
+      <section className="hero-section text-center py-20 md:py-24 px-6 bg-gradient-to-r from-purple-700 to-pink-500 text-white">
 
-        <h2 className="text-5xl md:text-6xl font-extrabold mb-6">
+        <h2 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
           Discover Delicious AI-Powered Recipes
         </h2>
 
@@ -118,7 +118,7 @@ function Home() {
             placeholder="Search recipes..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full px-6 py-4 rounded-full text-black text-lg shadow-xl outline-none"
+            className="w-full px-6 py-4 rounded-2xl text-black text-lg shadow-xl outline-none"
           />
 
         </div>
@@ -131,12 +131,12 @@ function Home() {
             placeholder="Enter ingredients..."
             value={ingredients}
             onChange={(e) => setIngredients(e.target.value)}
-            className="w-full p-5 rounded-full text-black shadow-xl"
+            className="w-full px-6 py-4 rounded-2xl text-black text-lg shadow-xl outline-none"
           />
 
           <button
             onClick={generateRecipe}
-            className="mt-6 bg-white text-purple-700 px-8 py-4 rounded-full font-bold hover:scale-105 transition"
+            className="mt-6 bg-white text-purple-700 px-8 py-4 rounded-full font-bold hover:scale-105 transition w-full md:w-auto"
           >
             {loading ? "Generating..." : "Generate AI Recipe"}
           </button>
@@ -276,7 +276,7 @@ function Home() {
           Featured Recipes
         </h3>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="recipe-grid">
 
           {filteredRecipes.map((recipe) => (
             <RecipeCard
