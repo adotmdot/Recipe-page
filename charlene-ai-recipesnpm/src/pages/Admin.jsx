@@ -13,7 +13,7 @@ function Admin() {
 
   function fetchRecipes() {
 
-    fetch("http://127.0.0.1:8000/recipes")
+    fetch("https://charlene-ai-backend.nicebush-7fc1af01.eastus.azurecontainerapps.io/recipes")
       .then((response) => response.json())
       .then((data) => setRecipes(data))
   }
@@ -37,7 +37,7 @@ function Admin() {
         formData.append("file", selectedFile)
 
         const uploadResponse = await fetch(
-            "http://127.0.0.1:8000/upload",
+            "https://charlene-ai-backend.nicebush-7fc1af01.eastus.azurecontainerapps.io/upload",
             {
                 method: "POST",
                 body: formData,
@@ -58,7 +58,7 @@ function Admin() {
     if (editingId) {
 
         await fetch(
-            `http://127.0.0.1:8000/recipes/${editingId}`,
+            `https://charlene-ai-backend.nicebush-7fc1af01.eastus.azurecontainerapps.io/recipes/${editingId}`,
             {
                 method: "PUT",
 
@@ -75,7 +75,7 @@ function Admin() {
     } else {
 
         await fetch(
-            "http://127.0.0.1:8000/recipes",
+            "https://charlene-ai-backend.nicebush-7fc1af01.eastus.azurecontainerapps.io/recipes",
             {
                 method: "POST",
 
@@ -111,7 +111,7 @@ function Admin() {
 
   async function deleteRecipe(id) {
 
-    await fetch(`http://127.0.0.1:8000/recipes/${id}`, {
+    await fetch(`https://charlene-ai-backend.nicebush-7fc1af01.eastus.azurecontainerapps.io/recipes/${id}`, {
       method: "DELETE",
     })
 

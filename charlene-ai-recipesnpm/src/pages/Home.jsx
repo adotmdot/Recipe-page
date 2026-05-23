@@ -17,7 +17,7 @@ function Home() {
 
   useEffect(() => {
 
-    fetch("http://127.0.0.1:8000/recipes")
+    fetch("https://charlene-ai-backend.nicebush-7fc1af01.eastus.azurecontainerapps.io/recipes")
       .then((response) => response.json())
       .then((data) => setRecipes(data))
 
@@ -29,7 +29,7 @@ function Home() {
     setLoading(true)
 
     const response = await fetch(
-      "http://127.0.0.1:8000/generate-recipe",
+      "https://charlene-ai-backend.nicebush-7fc1af01.eastus.azurecontainerapps.io/generate-recipe",
       {
         method: "POST",
 
@@ -70,7 +70,7 @@ function Home() {
         tips: generatedRecipe.tips
 }
 
-      await fetch("http://127.0.0.1:8000/recipes", {
+      await fetch("https://charlene-ai-backend.nicebush-7fc1af01.eastus.azurecontainerapps.io/recipes", {
 
         method: "POST",
 

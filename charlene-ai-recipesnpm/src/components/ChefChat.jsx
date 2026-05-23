@@ -37,7 +37,7 @@ function ChefChat() {
         try {
 
             const response = await fetch(
-                "http://127.0.0.1:8000/chef-chat",
+                "https://charlene-ai-backend.nicebush-7fc1af01.eastus.azurecontainerapps.io/chef-chat",
                 {
                     method: "POST",
                     headers: {

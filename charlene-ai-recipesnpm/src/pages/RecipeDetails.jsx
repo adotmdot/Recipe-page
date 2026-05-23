@@ -9,7 +9,7 @@ function RecipeDetails() {
 
   useEffect(() => {
 
-    fetch("http://127.0.0.1:8000/recipes")
+    fetch("https://charlene-ai-backend.nicebush-7fc1af01.eastus.azurecontainerapps.io/recipes")
       .then((response) => response.json())
       .then((data) => {
 
