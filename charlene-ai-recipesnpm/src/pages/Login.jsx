@@ -25,6 +25,8 @@ function Login({ darkMode }) {
 
             const data = await response.json();
 
+            console.log(data);
+
             if (!response.ok) {
                 setMessage(data.detail || "Login failed");
                 return;
@@ -33,7 +35,7 @@ function Login({ darkMode }) {
             localStorage.setItem("token", data.access_token);
             localStorage.setItem("user", JSON.stringify(data.user));
 
-            window.location.href = "/";
+            navigate("/");
 
         } catch (error) {
             console.error(error);
@@ -50,6 +52,7 @@ function Login({ darkMode }) {
         }
         >
             <form
+                onSubmit={handleLogin}
                 className={
                     darkMode
                     ? "bg-gray-800 p-10 rounded-3xl shadow-2xl flex flex-col gap-6 w-[400px]"
