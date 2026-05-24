@@ -16,7 +16,16 @@ function Admin({ darkMode }) {
 
   function fetchRecipes() {
 
-    fetch("https://charlene-ai-backend.nicebush-7fc1af01.eastus.azurecontainerapps.io/recipes")
+    const token = localStorage.getItem("token")
+
+    fetch(
+      "https://charlene-ai-backend.nicebush-7fc1af01.eastus.azurecontainerapps.io/recipes",
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    )
       .then((response) => response.json())
       .then((data) => setRecipes(data))
   }
@@ -70,6 +79,7 @@ function Admin({ darkMode }) {
 
                 headers: {
                     "Content-Type": "application/json",
+                    Authorization: `Bearer ${localStorage.getItem("token")}`,
                 },
 
                 body: JSON.stringify(recipeData),
@@ -87,6 +97,7 @@ function Admin({ darkMode }) {
 
                 headers: {
                     "Content-Type": "application/json",
+                    Authorization: `Bearer ${localStorage.getItem("token")}`,
                 },
 
                 body: JSON.stringify(recipeData),
@@ -120,9 +131,16 @@ function Admin({ darkMode }) {
 
   async function deleteRecipe(id) {
 
-    await fetch(`https://charlene-ai-backend.nicebush-7fc1af01.eastus.azurecontainerapps.io/recipes/${id}`, {
-      method: "DELETE",
-    })
+    await fetch(
+      `https://charlene-ai-backend.nicebush-7fc1af01.eastus.azurecontainerapps.io/recipes/${id}`,
+      {
+        method: "DELETE",
+
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      }
+    )
 
     fetchRecipes()
   }

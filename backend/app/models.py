@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Text
+from sqlalchemy import Column, Integer, String, Text, ForeignKey
 from .database import Base
 
 
@@ -19,6 +19,8 @@ class Recipe(Base):
     tips = Column(Text)
     
     instructions = Column(Text)
+    
+    user_id = Column(Integer, ForeignKey("users.id"))
     
     
 class User(Base):

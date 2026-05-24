@@ -17,7 +17,8 @@ from fastapi import (
     Depends,
     HTTPException,
     UploadFile,
-    File
+    File,
+    Header
 )
 
 from fastapi.responses import StreamingResponse
@@ -30,7 +31,7 @@ from dotenv import load_dotenv
 
 from passlib.context import CryptContext
 from jose import jwt
-
+from jose import JWTError
 import os
 import re
 import asyncio
@@ -100,6 +101,58 @@ def verify_password(plain_password, hashed_password):
         plain_password[:72],
         hashed_password
     )
+    
+    
+def get_current_user(
+    authorization: str = Header(None),
+    db: Session = Depends(get_db)
+):
+
+    if not authorization:
+
+        raise HTTPException(
+            status_code=401,
+            detail="No authorization header"
+        )
+
+    try:
+
+        token = authorization.split(" ")[1]
+
+        payload = jwt.decode(
+            token,
+            SECRET_KEY,
+            algorithms=[ALGORITHM]
+        )
+
+        user_id = payload.get("user_id")
+
+        if not user_id:
+
+            raise HTTPException(
+                status_code=401,
+                detail="Invalid token"
+            )
+
+        user = db.query(User).filter(
+            User.id == user_id
+        ).first()
+
+        if not user:
+
+            raise HTTPException(
+                status_code=401,
+                detail="User not found"
+            )
+
+        return user
+
+    except JWTError:
+
+        raise HTTPException(
+            status_code=401,
+            detail="Invalid token"
+        )    
 
 
 @app.get("/")
@@ -111,9 +164,14 @@ def home():
 
 
 @app.get("/recipes", response_model=list[RecipeResponse])
-def get_recipes(db: Session = Depends(get_db)):
+def get_recipes(
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user)
+):
 
-    recipes = db.query(Recipe).all()
+    recipes = db.query(Recipe).filter(
+        Recipe.user_id == current_user.id
+    ).all()
 
     return recipes
 
@@ -121,7 +179,8 @@ def get_recipes(db: Session = Depends(get_db)):
 @app.post("/recipes", response_model=RecipeResponse)
 def create_recipe(
     recipe: RecipeCreate,
-    db: Session = Depends(get_db)
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user)
 ):
 
     new_recipe = Recipe(
@@ -130,7 +189,8 @@ def create_recipe(
         description=recipe.description,
         ingredients=recipe.ingredients,
         instructions=recipe.instructions,
-        tips=recipe.tips
+        tips=recipe.tips,
+        user_id=current_user.id
     )
 
     db.add(new_recipe)
@@ -146,7 +206,8 @@ def create_recipe(
 def update_recipe(
     recipe_id: int,
     updated_recipe: RecipeCreate,
-    db: Session = Depends(get_db)
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user)
 ):
 
     recipe = db.query(Recipe).filter(
@@ -159,6 +220,13 @@ def update_recipe(
             status_code=404,
             detail="Recipe not found"
         )
+        
+    if recipe.user_id != current_user.id:
+
+        raise HTTPException(
+            status_code=403,
+            detail="Not authorized"
+        )    
 
     recipe.title = updated_recipe.title
     recipe.image = updated_recipe.image
@@ -177,7 +245,8 @@ def update_recipe(
 @app.delete("/recipes/{recipe_id}")
 def delete_recipe(
     recipe_id: int,
-    db: Session = Depends(get_db)
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user)
 ):
 
     recipe = db.query(Recipe).filter(
@@ -190,6 +259,13 @@ def delete_recipe(
             status_code=404,
             detail="Recipe not found"
         )
+        
+    if recipe.user_id != current_user.id:
+
+        raise HTTPException(
+            status_code=403,
+            detail="Not authorized"
+        )    
 
     db.delete(recipe)
 
