@@ -28,24 +28,34 @@ function Home() {
 
     setLoading(true)
 
-    const response = await fetch(
-      "https://charlene-ai-backend.nicebush-7fc1af01.eastus.azurecontainerapps.io/generate-recipe",
-      {
-        method: "POST",
+    try {
 
-        headers: {
-          "Content-Type": "application/json",
-        },
+      const response = await fetch(
+        "https://charlene-ai-backend.nicebush-7fc1af01.eastus.azurecontainerapps.io/generate-recipe",
+        {
+          method: "POST",
 
-        body: JSON.stringify({
-          ingredients,
-        }),
-      }
-    )
+          headers: {
+            "Content-Type": "application/json",
+          },
 
-    const data = await response.json()
+          body: JSON.stringify({
+            ingredients,
+          }),
+        }
+      )
 
-    setGeneratedRecipe(data)
+      const data = await response.json()
+
+      setGeneratedRecipe(data)
+
+    } catch (error) {
+
+      console.error(error)
+
+      alert("Failed to generate recipe.")
+
+    }
 
     setLoading(false)
   }
@@ -57,7 +67,6 @@ function Home() {
 
     try {
 
-      // USE PLACEHOLDER IMAGE
       const image =
         "https://images.unsplash.com/photo-1546069901-ba9599a7e63c"
 
@@ -67,19 +76,21 @@ function Home() {
         description: generatedRecipe.description,
         ingredients: generatedRecipe.ingredients,
         instructions: generatedRecipe.instructions,
-        tips: generatedRecipe.tips
-}
+        tips: generatedRecipe.tips,
+      }
 
-      await fetch("https://charlene-ai-backend.nicebush-7fc1af01.eastus.azurecontainerapps.io/recipes", {
+      await fetch(
+        "https://charlene-ai-backend.nicebush-7fc1af01.eastus.azurecontainerapps.io/recipes",
+        {
+          method: "POST",
 
-        method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
 
-        headers: {
-          "Content-Type": "application/json",
-        },
-
-        body: JSON.stringify(recipeData),
-      })
+          body: JSON.stringify(recipeData),
+        }
+      )
 
       alert("Recipe saved successfully!")
 
@@ -96,22 +107,23 @@ function Home() {
 
 
   return (
+
     <div className="min-h-screen bg-pink-50">
 
       {/* HERO SECTION */}
-      <section className="hero-section text-center py-20 md:py-24 px-6 bg-gradient-to-r from-purple-700 to-pink-500 text-white">
+      <section className="text-center py-20 md:py-28 px-6 bg-gradient-to-r from-purple-700 to-pink-500 text-white">
 
-        <h2 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+        <h2 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight max-w-6xl mx-auto">
           Discover Delicious AI-Powered Recipes
         </h2>
 
-        <p className="text-xl max-w-3xl mx-auto mb-8">
+        <p className="text-xl max-w-3xl mx-auto mb-10">
           Search healthy meals, generate recipes with AI,
           and explore modern cooking inspiration.
         </p>
 
         {/* SEARCH BAR */}
-        <div className="max-w-xl mx-auto mb-8">
+        <div className="max-w-2xl mx-auto mb-8 w-full">
 
           <input
             type="text"
@@ -124,7 +136,7 @@ function Home() {
         </div>
 
         {/* AI GENERATOR */}
-        <div className="max-w-3xl mx-auto mt-10">
+        <div className="max-w-3xl mx-auto mt-10 w-full flex flex-col items-center gap-6">
 
           <input
             type="text"
@@ -136,7 +148,7 @@ function Home() {
 
           <button
             onClick={generateRecipe}
-            className="mt-6 bg-white text-purple-700 px-8 py-4 rounded-full font-bold hover:scale-105 transition w-full md:w-auto"
+            className="bg-white text-purple-700 px-10 py-4 rounded-full font-bold hover:scale-105 transition"
           >
             {loading ? "Generating..." : "Generate AI Recipe"}
           </button>
@@ -144,7 +156,6 @@ function Home() {
         </div>
 
       </section>
-
 
       {/* AI RECIPE RESPONSE */}
       {generatedRecipe && (
@@ -170,6 +181,7 @@ function Home() {
           <div className="space-y-10 text-gray-700 leading-9 text-lg">
 
             <div>
+
               <h2 className="text-4xl font-bold text-purple-700 mb-4">
                 {generatedRecipe.title}
               </h2>
@@ -178,41 +190,62 @@ function Home() {
                 {generatedRecipe.description}
               </p>
 
-
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
 
                 <div className="bg-pink-100 p-4 rounded-2xl text-center shadow">
-                  <p className="text-sm text-gray-500">Cook Time</p>
+
+                  <p className="text-sm text-gray-500">
+                    Cook Time
+                  </p>
+
                   <p className="text-xl font-bold text-purple-700">
                     ⏱ {generatedRecipe.cook_time}
                   </p>
+
                 </div>
 
                 <div className="bg-pink-100 p-4 rounded-2xl text-center shadow">
-                  <p className="text-sm text-gray-500">Difficulty</p>
+
+                  <p className="text-sm text-gray-500">
+                    Difficulty
+                  </p>
+
                   <p className="text-xl font-bold text-purple-700">
                     🔥 {generatedRecipe.difficulty}
                   </p>
+
                 </div>
 
                 <div className="bg-pink-100 p-4 rounded-2xl text-center shadow">
-                  <p className="text-sm text-gray-500">Servings</p>
+
+                  <p className="text-sm text-gray-500">
+                    Servings
+                  </p>
+
                   <p className="text-xl font-bold text-purple-700">
                     🍽 {generatedRecipe.servings}
                   </p>
+
                 </div>
 
                 <div className="bg-pink-100 p-4 rounded-2xl text-center shadow">
-                  <p className="text-sm text-gray-500">Calories</p>
+
+                  <p className="text-sm text-gray-500">
+                    Calories
+                  </p>
+
                   <p className="text-xl font-bold text-purple-700">
                     🥗 {generatedRecipe.calories}
                   </p>
+
                 </div>
 
               </div>
+
             </div>
 
             <div>
+
               <h3 className="text-3xl font-bold text-purple-700 mb-4">
                 Ingredients
               </h3>
@@ -220,9 +253,11 @@ function Home() {
               <pre className="whitespace-pre-wrap font-sans">
                 {generatedRecipe.ingredients}
               </pre>
+
             </div>
 
             <div>
+
               <h3 className="text-3xl font-bold text-purple-700 mb-6">
                 Instructions
               </h3>
@@ -231,7 +266,7 @@ function Home() {
 
                 {generatedRecipe.instructions
                   ?.split("\n")
-                  .filter(step => step.trim() !== "")
+                  .filter((step) => step.trim() !== "")
                   .map((step, index) => (
 
                     <div
@@ -247,12 +282,14 @@ function Home() {
 
                     </div>
 
-                ))}
+                  ))}
 
               </div>
+
             </div>
 
             <div>
+
               <h3 className="text-3xl font-bold text-purple-700 mb-4">
                 Cooking Tips
               </h3>
@@ -260,6 +297,7 @@ function Home() {
               <pre className="whitespace-pre-wrap font-sans">
                 {generatedRecipe.tips}
               </pre>
+
             </div>
 
           </div>
@@ -268,7 +306,6 @@ function Home() {
 
       )}
 
-
       {/* FEATURED SECTION */}
       <section className="max-w-7xl mx-auto py-20 px-6">
 
@@ -276,9 +313,10 @@ function Home() {
           Featured Recipes
         </h3>
 
-        <div className="recipe-grid">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
 
           {filteredRecipes.map((recipe) => (
+
             <RecipeCard
               key={recipe.id}
               id={recipe.id}
@@ -286,6 +324,7 @@ function Home() {
               image={recipe.image}
               description={recipe.description}
             />
+
           ))}
 
         </div>
@@ -293,6 +332,7 @@ function Home() {
       </section>
 
     </div>
+
   )
 }
 
