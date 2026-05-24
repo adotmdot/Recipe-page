@@ -210,7 +210,7 @@ async def upload_image(file: UploadFile = File(...)):
         buffer.write(await file.read())
 
     return {
-        "image_url": f"http://127.0.0.1:8000/uploads/{file.filename}"
+        "image_url": f"https://charlene-ai-backend.nicebush-7fc1af01.eastus.azurecontainerapps.io/uploads/{file.filename}"
     }
 
 
