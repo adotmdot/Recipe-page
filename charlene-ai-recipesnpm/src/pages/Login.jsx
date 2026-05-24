@@ -35,7 +35,7 @@ function Login({ darkMode }) {
             localStorage.setItem("token", data.access_token);
             localStorage.setItem("user", JSON.stringify(data.user));
 
-            navigate("/");
+            window.location.reload();
 
         } catch (error) {
             console.error(error);

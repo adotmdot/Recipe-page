@@ -53,6 +53,7 @@ function Signup({ darkMode }) {
             }
         >
             <form
+                onSubmit={handleSignup}
                 className={
                     darkMode
                     ? "bg-gray-800 p-10 rounded-3xl shadow-2xl flex flex-col gap-6 w-[400px]"
