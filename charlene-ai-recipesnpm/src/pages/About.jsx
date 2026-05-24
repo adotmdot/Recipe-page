@@ -1,3 +1,6 @@
+function About() {
+
+
 return (
   <div className="min-h-screen bg-pink-50 py-20 px-6">
 
@@ -62,3 +65,6 @@ return (
 
   </div>
 )
+
+  }
+export default About
