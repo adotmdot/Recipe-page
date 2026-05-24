@@ -9,6 +9,9 @@ function Admin({ darkMode }) {
   const [selectedFile, setSelectedFile] = useState(null)
   const [description, setDescription] = useState("")
   const [editingId, setEditingId] = useState(null)
+  const [ingredients, setIngredients] = useState("")
+  const [instructions, setInstructions] = useState("")
+  const [tips, setTips] = useState("")
 
 
   function fetchRecipes() {
@@ -53,6 +56,9 @@ function Admin({ darkMode }) {
         title,
         image: uploadedImageUrl,
         description,
+        ingredients,
+        instructions,
+        tips,
     }
 
     if (editingId) {
@@ -91,6 +97,9 @@ function Admin({ darkMode }) {
     setTitle("")
     setImage("")
     setDescription("")
+    setIngredients("")
+    setInstructions("")
+    setTips("")
     setSelectedFile(null)
 
     fetchRecipes()
@@ -169,15 +178,36 @@ function Admin({ darkMode }) {
             />
 
           <textarea
-            placeholder="Recipe Description"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            className={
-              darkMode
-                ? "w-full p-4 rounded-xl border h-32 bg-gray-700 text-white border-gray-600"
-                : "w-full p-4 rounded-xl border h-32 bg-white text-black"
-            }
-            required
+              placeholder="Ingredients"
+              value={ingredients}
+              onChange={(e) => setIngredients(e.target.value)}
+              className={
+                  darkMode
+                  ? "w-full p-4 rounded-xl border h-32 bg-gray-700 text-white border-gray-600"
+                  : "w-full p-4 rounded-xl border h-32 bg-white text-black"
+              }
+          />
+
+          <textarea
+              placeholder="Instructions"
+              value={instructions}
+              onChange={(e) => setInstructions(e.target.value)}
+              className={
+                  darkMode
+                  ? "w-full p-4 rounded-xl border h-32 bg-gray-700 text-white border-gray-600"
+                  : "w-full p-4 rounded-xl border h-32 bg-white text-black"
+              }
+          />
+
+          <textarea
+              placeholder="Cooking Tips"
+              value={tips}
+              onChange={(e) => setTips(e.target.value)}
+              className={
+                  darkMode
+                  ? "w-full p-4 rounded-xl border h-32 bg-gray-700 text-white border-gray-600"
+                  : "w-full p-4 rounded-xl border h-32 bg-white text-black"
+              }
           />
 
           <button
