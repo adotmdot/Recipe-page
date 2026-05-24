@@ -17,9 +17,34 @@ function Home() {
 
   useEffect(() => {
 
-    fetch("https://charlene-ai-backend.nicebush-7fc1af01.eastus.azurecontainerapps.io/recipes")
-      .then((response) => response.json())
+    const token = localStorage.getItem("token")
+
+    if (!token) {
+      return
+    }
+
+    fetch(
+      "https://charlene-ai-backend.nicebush-7fc1af01.eastus.azurecontainerapps.io/recipes",
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    )
+      .then((response) => {
+
+        if (!response.ok) {
+          throw new Error("Unauthorized")
+        }
+
+        return response.json()
+      })
+
       .then((data) => setRecipes(data))
+
+      .catch((error) => {
+        console.error(error)
+      })
 
   }, [])
 
@@ -86,6 +111,7 @@ function Home() {
 
           headers: {
             "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
 
           body: JSON.stringify(recipeData),
