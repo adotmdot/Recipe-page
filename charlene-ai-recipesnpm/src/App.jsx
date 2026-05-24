@@ -21,8 +21,6 @@ function App() {
     JSON.parse(localStorage.getItem("user"))
   )
 
-  const [user, setUser] = useState(null);
-
   useEffect(() => {
     const savedUser = localStorage.getItem("user");
 
