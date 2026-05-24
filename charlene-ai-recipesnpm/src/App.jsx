@@ -18,8 +18,8 @@ function App() {
   const [darkMode, setDarkMode] = useState(false);
 
   const [user, setUser] = useState(
-    JSON.parse(localStorage.getItem("user"))
-  )
+    JSON.parse(localStorage.getItem("user") || "null")
+  );
 
   useEffect(() => {
     const savedUser = localStorage.getItem("user");
@@ -34,6 +34,8 @@ function App() {
     localStorage.removeItem("user");
 
     setUser(null);
+
+    window.location.href = "/";
   };
 
   return (
@@ -71,47 +73,25 @@ function App() {
 
               {!user ? (
                 <>
-                  {!user ? (
-                    <>
-                      <Link to="/signup" className="hover:text-pink-200 transition">
-                        Signup
-                      </Link>
+                  <Link to="/signup" className="hover:text-pink-200 transition">
+                    Signup
+                  </Link>
 
-                      <Link to="/login" className="hover:text-pink-200 transition">
-                        Login
-                      </Link>
-                    </>
-                  ) : (
-                    <>
-                      <span className="font-semibold">
-                        👋 {user.username}
-                      </span>
-
-                      <button
-                        onClick={() => {
-                          localStorage.removeItem("token")
-                          localStorage.removeItem("user")
-                          setUser(null)
-                          window.location.href = "/"
-                        }}
-                        className="bg-red-500 px-4 py-2 rounded-full"
-                      >
-                        Sign Out
-                      </button>
-                    </>
-                  )}
+                  <Link to="/login" className="hover:text-pink-200 transition">
+                    Login
+                  </Link>
                 </>
               ) : (
                 <>
-                  <span className="font-semibold">
-                    👤 {user.username}
+                  <span className="font-semibold text-pink-200">
+                    👋 {user.username}
                   </span>
 
                   <button
                     onClick={logout}
-                    className="bg-red-500 px-4 py-2 rounded-full"
+                    className="bg-red-500 px-4 py-2 rounded-full hover:bg-red-600 transition"
                   >
-                    Logout
+                    Sign Out
                   </button>
                 </>
               )}
