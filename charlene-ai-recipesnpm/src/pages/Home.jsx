@@ -93,7 +93,9 @@ function Home() {
     try {
 
       const image =
-        "https://images.unsplash.com/photo-1546069901-ba9599a7e63c"
+        `https://loremflickr.com/640/480/${encodeURIComponent(
+          generatedRecipe.title
+        )}`
 
       const recipeData = {
         title: generatedRecipe.title,

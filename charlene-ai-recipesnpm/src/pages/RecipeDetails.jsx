@@ -9,7 +9,14 @@ function RecipeDetails() {
 
   useEffect(() => {
 
-    fetch("https://charlene-ai-backend.nicebush-7fc1af01.eastus.azurecontainerapps.io/recipes")
+    fetch(
+      "https://charlene-ai-backend.nicebush-7fc1af01.eastus.azurecontainerapps.io/recipes",
+      {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      }
+    )
       .then((response) => response.json())
       .then((data) => {
 
@@ -18,6 +25,9 @@ function RecipeDetails() {
         )
 
         setRecipe(foundRecipe)
+      })
+      .catch((error) => {
+        console.error(error)
       })
 
   }, [id])
@@ -41,6 +51,10 @@ function RecipeDetails() {
           src={recipe.image}
           alt={recipe.title}
           className="w-full h-[400px] object-cover"
+          onError={(e) => {
+            e.target.src =
+              "https://images.unsplash.com/photo-1504674900247-0877df9cc836";
+          }}
         />
 
         <div className="p-10">
