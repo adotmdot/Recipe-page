@@ -75,8 +75,8 @@ function App() {
           path="/"
           element={
             <>
-              <Home />
-              <ChefChat />
+              <Home darkMode={darkMode} />
+              <ChefChat darkMode={darkMode} />
             </>
           }
         />
@@ -87,7 +87,7 @@ function App() {
 
         <Route path="/recipe/:id" element={<RecipeDetails />} />
 
-        <Route path="/admin" element={<Admin />} />
+        <Route path="/admin" element={<Admin darkMode={darkMode} />} />
 
         <Route path="/signup" element={<Signup />} />
 

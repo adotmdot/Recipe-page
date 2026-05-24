@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import ReactMarkdown from "react-markdown";
 
-function ChefChat() {
+function ChefChat({ darkMode }) {
 
     const [message, setMessage] = useState("");
     const [chat, setChat] = useState([]);
@@ -102,17 +102,33 @@ function ChefChat() {
 
     return (
 
-        <div className="chef-chat-container">
+        <div
+          className={
+            darkMode
+              ? "chef-chat-container bg-gray-900 text-white"
+              : "chef-chat-container"
+          }
+        >
 
             <h2 className="chef-title">
                 AI Chef Assistant
             </h2>
 
-            <div className="chat-box">
+            <div
+              className={
+                darkMode
+                  ? "chat-box bg-gray-800 text-white"
+                  : "chat-box"
+              }
+            >
 
                 {chat.length === 0 && (
 
-                    <div className="welcome-message">
+                    <div className={
+                            darkMode
+                                ? "welcome-message text-gray-200"
+                                : "welcome-message"
+                            }>
 
                         👋 Hi! I'm your AI Chef Assistant.
 
@@ -138,8 +154,12 @@ function ChefChat() {
                         key={index}
                         className={
                             msg.role === "user"
-                                ? "user-message"
-                                : "ai-message"
+                                ? darkMode
+                                    ? "user-message bg-purple-700 text-white"
+                                    : "user-message"
+                                : darkMode
+                                    ? "ai-message bg-gray-700 text-white"
+                                    : "ai-message"
                         }
                     >
 
@@ -186,19 +206,24 @@ function ChefChat() {
             <div className="chat-input-area">
 
                 <input
-                    type="text"
-                    placeholder="Ask the AI chef anything..."
-                    value={message}
-                    onChange={(e) =>
-                        setMessage(e.target.value)
+                  type="text"
+                  placeholder="Ask the AI chef anything..."
+                  value={message}
+                  onChange={(e) =>
+                    setMessage(e.target.value)
+                  }
+                  onKeyDown={(e) => {
+
+                    if (e.key === "Enter") {
+                      sendMessage();
                     }
-                    onKeyDown={(e) => {
 
-                        if (e.key === "Enter") {
-                            sendMessage();
-                        }
-
-                    }}
+                  }}
+                  className={
+                    darkMode
+                      ? "flex-1 p-4 rounded-2xl border-2 border-purple-500 bg-gray-700 text-white placeholder-gray-400 outline-none"
+                      : "flex-1 p-4 rounded-2xl border-2 border-purple-500 bg-white text-black outline-none"
+                  }
                 />
 
                 <button onClick={sendMessage}>

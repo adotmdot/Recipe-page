@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-function Admin() {
+function Admin({ darkMode }) {
 
   const [recipes, setRecipes] = useState([])
 
@@ -121,7 +121,13 @@ function Admin() {
 
   return (
 
-    <div className="min-h-screen bg-pink-50 py-20 px-6">
+    <div
+      className={
+        darkMode
+          ? "min-h-screen bg-gray-900 py-20 px-6 text-white"
+          : "min-h-screen bg-pink-50 py-20 px-6 text-black"
+      }
+    >
 
       <div className="max-w-5xl mx-auto">
 
@@ -132,7 +138,11 @@ function Admin() {
 
         <form
           onSubmit={handleSubmit}
-          className="bg-white p-8 rounded-3xl shadow-xl mb-12 space-y-6"
+          className={
+            darkMode
+              ? "bg-gray-800 p-8 rounded-3xl shadow-xl mb-12 space-y-6"
+              : "bg-white p-8 rounded-3xl shadow-xl mb-12 space-y-6"
+          }
         >
 
           <input
@@ -140,21 +150,33 @@ function Admin() {
             placeholder="Recipe Title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            className="w-full p-4 rounded-xl border"
+            className={
+              darkMode
+                ? "w-full p-4 rounded-xl border bg-gray-700 text-white border-gray-600"
+                : "w-full p-4 rounded-xl border bg-white text-black"
+            }
             required
           />
 
           <input
             type="file"
             onChange={(e) => setSelectedFile(e.target.files[0])}
-            className="w-full p-4 rounded-2xl border mb-6"
+            className={
+              darkMode
+                ? "w-full p-4 rounded-2xl border mb-6 bg-gray-700 text-white border-gray-600"
+                : "w-full p-4 rounded-2xl border mb-6 bg-white text-black"
+            }
             />
 
           <textarea
             placeholder="Recipe Description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            className="w-full p-4 rounded-xl border h-32"
+            className={
+              darkMode
+                ? "w-full p-4 rounded-xl border h-32 bg-gray-700 text-white border-gray-600"
+                : "w-full p-4 rounded-xl border h-32 bg-white text-black"
+            }
             required
           />
 
@@ -174,7 +196,11 @@ function Admin() {
 
             <div
               key={recipe.id}
-              className="bg-white rounded-3xl overflow-hidden shadow-lg"
+              className={
+                darkMode
+                  ? "bg-gray-800 rounded-3xl overflow-hidden shadow-lg"
+                  : "bg-white rounded-3xl overflow-hidden shadow-lg"
+              }
             >
 
               <img
@@ -189,7 +215,11 @@ function Admin() {
                   {recipe.title}
                 </h2>
 
-                <p className="text-gray-600 mb-6">
+                <p className={
+                     darkMode
+                       ? "text-gray-300 mb-6"
+                       : "text-gray-600 mb-6"
+                   }>
                   {recipe.description}
                 </p>
 
