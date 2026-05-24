@@ -17,6 +17,10 @@ function App() {
 
   const [darkMode, setDarkMode] = useState(false);
 
+  const [user, setUser] = useState(
+    JSON.parse(localStorage.getItem("user"))
+  )
+
   const [user, setUser] = useState(null);
 
   useEffect(() => {
@@ -69,9 +73,35 @@ function App() {
 
               {!user ? (
                 <>
-                  <Link to="/signup">Signup</Link>
+                  {!user ? (
+                    <>
+                      <Link to="/signup" className="hover:text-pink-200 transition">
+                        Signup
+                      </Link>
 
-                  <Link to="/login">Login</Link>
+                      <Link to="/login" className="hover:text-pink-200 transition">
+                        Login
+                      </Link>
+                    </>
+                  ) : (
+                    <>
+                      <span className="font-semibold">
+                        👋 {user.username}
+                      </span>
+
+                      <button
+                        onClick={() => {
+                          localStorage.removeItem("token")
+                          localStorage.removeItem("user")
+                          setUser(null)
+                          window.location.href = "/"
+                        }}
+                        className="bg-red-500 px-4 py-2 rounded-full"
+                      >
+                        Sign Out
+                      </button>
+                    </>
+                  )}
                 </>
               ) : (
                 <>
