@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function Signup() {
+function Signup({ darkMode }) {
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -45,8 +45,20 @@ function Signup() {
     };
 
     return (
-        <div className="auth-container">
-            <form className="auth-card" onSubmit={handleSignup}>
+        <div
+            className={
+                darkMode
+                ? "bg-gray-900 text-white min-h-screen flex items-center justify-center"
+                : "bg-[#081028] min-h-screen flex items-center justify-center"
+            }
+        >
+            <form
+                className={
+                    darkMode
+                    ? "bg-gray-800 p-10 rounded-3xl shadow-2xl flex flex-col gap-6 w-[400px]"
+                    : "bg-white p-10 rounded-3xl shadow-2xl flex flex-col gap-6 w-[400px]"
+                }
+            >
                 <h2>Create Account</h2>
 
                 <input

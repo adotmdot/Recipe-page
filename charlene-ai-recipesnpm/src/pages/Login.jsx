@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function Login() {
+function Login({ darkMode }) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
@@ -42,8 +42,20 @@ function Login() {
     };
 
     return (
-        <div className="auth-container">
-            <form className="auth-card" onSubmit={handleLogin}>
+        <div
+        className={
+            darkMode
+            ? "bg-gray-900 text-white min-h-screen flex items-center justify-center"
+            : "bg-[#081028] min-h-screen flex items-center justify-center"
+        }
+        >
+            <form
+                className={
+                    darkMode
+                    ? "bg-gray-800 p-10 rounded-3xl shadow-2xl flex flex-col gap-6 w-[400px]"
+                    : "bg-white p-10 rounded-3xl shadow-2xl flex flex-col gap-6 w-[400px]"
+                }
+            >
                 <h2>Login</h2>
 
                 <input
@@ -52,7 +64,12 @@ function Login() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                />
+                    className={
+                        darkMode
+                        ? "bg-gray-700 text-white p-4 rounded-2xl outline-none"
+                        : "bg-white text-black p-4 rounded-2xl border outline-none"
+                    }
+                    />
 
                 <input
                     type="password"
@@ -60,7 +77,12 @@ function Login() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
-                />
+                    className={
+                        darkMode
+                        ? "bg-gray-700 text-white p-4 rounded-2xl outline-none"
+                        : "bg-white text-black p-4 rounded-2xl border outline-none"
+                    }
+                    />
 
                 <button type="submit">
                     Login
